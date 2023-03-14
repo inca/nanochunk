@@ -1,0 +1,54 @@
+{
+    "name": "nanochunk",
+    "version": "0.0.0",
+    "description": "Tiny chunked encoding parser using async generators",
+    "type": "module",
+    "sideEffects": false,
+    "exports": {
+        ".": "./out/main/index.js"
+    },
+    "main": "out/main/index.js",
+    "types": "out/main/index.d.ts",
+    "files": [
+        "out/main/**/*",
+        "out/bin/**/*"
+    ],
+    "scripts": {
+        "clean": "rm -rf out *.tsbuildinfo",
+        "dev": "npm run clean && tsc -b -w",
+        "compile": "npm run clean && tsc -b",
+        "lint": "eslint --ext=.js,.ts,.vue --cache .",
+        "test": "NODE_ENV=test mocha",
+        "version": "npm run compile",
+        "postversion": "npm publish --access=public && git push --tags origin main"
+    },
+    "pre-commit": [
+        "lint"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/inca/nanochunk.git"
+    },
+    "keywords": [
+        "chunk",
+        "stream",
+        "async",
+        "generator",
+        "parser"
+    ],
+    "author": "Boris Okunskiy",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/inca/nanochunk/issues"
+    },
+    "homepage": "https://github.com/inca/nanochunk#readme",
+    "devDependencies": {
+        "@nodescript/eslint-config": "^1.0.4",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^18.15.3",
+        "eslint": "^8.36.0",
+        "mocha": "^10.2.0",
+        "pre-commit": "^1.2.2",
+        "typescript": "^4.9.5"
+    }
+}
