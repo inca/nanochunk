@@ -1,6 +1,6 @@
 {
     "name": "nanochunk",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "Tiny chunked encoding parser using async generators",
     "type": "module",
     "sideEffects": false,
